@@ -10,13 +10,14 @@ from sklearn.impute import SimpleImputer
 
 
 
-class RF_predictions:
+class RF_nog:
     def __init__(self, trainpath, testpath):
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
-        self.train = self.train.drop(columns=['Unnamed: 0'])
-        self.test = self.test.drop(columns=['Unnamed: 0'])
+        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1'])
+        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1'])
+
 
     def splitting(self):
         y_train = self.train['gname']
@@ -70,7 +71,7 @@ class RF_predictions:
 
 def main(trainpath, testpath):
     """Main function to initialize and process data."""
-    model = RF_predictions(trainpath, testpath)
+    model = RF_nog(trainpath, testpath)
 
     X_train, X_test, y_train, y_test = model.splitting()
 
