@@ -17,6 +17,7 @@ class RF_predictions:
 
         self.train = self.train.drop(columns=['Unnamed: 0'])
         self.test = self.test.drop(columns=['Unnamed: 0'])
+        print(self.train.shape)
 
     def splitting(self):
         y_train = self.train['gname']
