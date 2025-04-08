@@ -1,0 +1,12 @@
+Partition 1 - 100 samples per class, all features, no encoding
+Accuracy: 97.33%
+---------------------------------------------------
+Partition 2 - 200 samples per class, all features, no encoding
+Accuracy: 95.28%
+---------------------------------------------------
+Partition 3 - 300 samples per class, all features, no encoding
+Accuracy: 96.33%
+---------------------------------------------------
+Partition 4 - 478 samples per class, all features, no encoding
+Accuracy: 95.00%
+---------------------------------------------------

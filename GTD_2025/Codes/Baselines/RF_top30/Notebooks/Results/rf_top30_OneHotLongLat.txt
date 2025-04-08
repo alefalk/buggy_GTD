@@ -1,0 +1,12 @@
+Partition 1 - 100 samples per class, without geograpgical data except long/lat which are one hot encoded
+Accuracy: 86.11%
+---------------------------------------------------
+Partition 2 - 200 samples per class, without geograpgical data except long/lat which are one hot encoded
+Accuracy: 71.50%
+---------------------------------------------------
+Partition 3 - 300 samples per class, without geograpgical data except long/lat which are one hot encoded
+Accuracy: 80.26%
+---------------------------------------------------
+Partition 4 - 478 samples per class, without geograpgical data except long/lat which are one hot encoded
+Accuracy: 79.98%
+---------------------------------------------------
