@@ -21,8 +21,14 @@ class RF_nog:
         train_features = self.train.drop(columns='gname')
         test_features = self.test.drop(columns=['gname'])
 
+        train_features['longlat'] = self.train['longitude'].astype(str) + ", " + self.train['latitude'].astype(str)
+        test_features['longlat'] = self.test['longitude'].astype(str) + ", " + self.test['latitude'].astype(str)
+        train_features = train_features.drop(columns=['longitude', 'latitude'])
+        test_features = test_features.drop(columns=['longitude', 'latitude'])
+
+
         #One hot Encoding
-        geodata = ['latitude', 'longitude']
+        geodata = ['longlat']
         all_categories = pd.concat([train_features, test_features])
         onehot = pd.get_dummies(all_categories, columns=geodata)
 

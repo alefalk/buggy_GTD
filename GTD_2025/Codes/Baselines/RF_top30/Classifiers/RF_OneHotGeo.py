@@ -21,15 +21,13 @@ class RF_nog:
         train_features = self.train.drop(columns='gname')
         test_features = self.test.drop(columns=['gname'])
 
+        # One Hot encoding
+        geodata = ['latitude', 'longitude', 'city', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity']
+        all_categories = pd.concat([train_features, test_features])
+        onehot = pd.get_dummies(all_categories, columns=geodata)
 
-        geodata = ['latitude', 'longitude', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1']
-        train_features = pd.get_dummies(train_features, columns = geodata)
-        test_features = pd.get_dummies(test_features, columns = geodata)
-
-        train_features, test_features = train_features.align(test_features, join='outer', axis=1, fill_value=0)
-        if train_features.columns.tolist() != test_features.columns.tolist():
-            print("Mismatch in columns between train and test!")
-
+        train_features = onehot.iloc[:len(train_features)]
+        test_features = onehot.iloc[len(train_features):]
 
         self.train = pd.concat([train_features, self.train['gname']], axis=1)
         self.test = pd.concat([test_features, self.test['gname']], axis=1)
@@ -100,7 +98,7 @@ def main(trainpath, testpath):
     print("Making predictions...")
     accuracy_gbc, y_pred_gbc = model.make_predictions(best_rfc, X_test, y_test)
 
-    return model, accuracy_gbc, y_pred_gbc, y_test  
+    return best_rfc, accuracy_gbc, y_pred_gbc, y_test  
 
 if __name__ == "__main__":
     main()  

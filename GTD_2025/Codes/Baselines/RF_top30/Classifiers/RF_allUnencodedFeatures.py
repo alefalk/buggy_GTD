@@ -84,7 +84,7 @@ def main(trainpath, testpath):
     print("Making predictions...")
     accuracy_gbc, y_pred_gbc = model.make_predictions(best_rfc, X_test, y_test)
 
-    return model, accuracy_gbc, y_pred_gbc, y_test  
+    return best_rfc, accuracy_gbc, y_pred_gbc, y_test  
 
 if __name__ == "__main__":
     main()  

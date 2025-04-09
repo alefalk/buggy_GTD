@@ -1,12 +1,12 @@
 Partition 1 - 100 samples per class with one hot encoded geographical features
-Accuracy: 89.56%
+Accuracy: 86.00%
 ---------------------------------------------------
 Partition 2 - 200 samples per class with one hot encoded geographical features
-Accuracy: 90.56%
+Accuracy: 88.44%
 ---------------------------------------------------
 Partition 3 - 300 samples per class with one hot encoded geographical features
-Accuracy: 90.04%
+Accuracy: 90.07%
 ---------------------------------------------------
 Partition 4 - 478 samples per class with one hot encoded geographical features
-Accuracy: 90.07%
+Accuracy: 87.82%
 ---------------------------------------------------

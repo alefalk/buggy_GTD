@@ -15,8 +15,9 @@ class RF_nog:
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
-        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1'])
-        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'region', 'provstate', 'latitude', 'longitude', 'natlty1'])
+        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity'])
+        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity'])
+        print(self.train.columns)
 
 
     def splitting(self):
@@ -84,7 +85,7 @@ def main(trainpath, testpath):
     print("Making predictions...")
     accuracy_gbc, y_pred_gbc = model.make_predictions(best_rfc, X_test, y_test)
 
-    return model, accuracy_gbc, y_pred_gbc, y_test  
+    return best_rfc, accuracy_gbc, y_pred_gbc, y_test  
 
 if __name__ == "__main__":
     main()  
