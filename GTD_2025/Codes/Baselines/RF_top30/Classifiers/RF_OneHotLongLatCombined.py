@@ -15,20 +15,14 @@ class RF_nog:
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
-        self.train = self.train.drop(columns=['Unnamed: 0'])
-        self.test = self.test.drop(columns=['Unnamed: 0'])
+        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'natlty1', 'specificity', 'iyear', 'imonth', 'iday'])
+        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'natlty1', 'specificity',  'iyear', 'imonth', 'iday'])
 
         train_features = self.train.drop(columns='gname')
         test_features = self.test.drop(columns=['gname'])
 
-        train_features['longlat'] = self.train['longitude'].astype(str) + ", " + self.train['latitude'].astype(str)
-        test_features['longlat'] = self.test['longitude'].astype(str) + ", " + self.test['latitude'].astype(str)
-        train_features = train_features.drop(columns=['longitude', 'latitude'])
-        test_features = test_features.drop(columns=['longitude', 'latitude'])
-
-
         #One hot Encoding
-        geodata = ['longlat']
+        geodata = ['longitude','latitude']
         all_categories = pd.concat([train_features, test_features])
         onehot = pd.get_dummies(all_categories, columns=geodata)
 

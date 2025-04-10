@@ -15,8 +15,8 @@ class RF_nog:
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
-        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity'])
-        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity'])
+        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity', 'iyear', 'imonth', 'iday'])
+        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity',  'iyear', 'imonth', 'iday'])
         print(self.train.columns)
 
 
