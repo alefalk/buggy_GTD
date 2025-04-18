@@ -1,42 +1,42 @@
 Epoch 1: 
-Test set: Average loss: 3.2850, Accuracy: 162/2100 (0.077143)
+Test set: Average loss: 3.3361, Accuracy: 91/2100 (0.043333)
 Epoch 2: 
-Test set: Average loss: 3.2008, Accuracy: 145/2100 (0.069048)
+Test set: Average loss: 3.1513, Accuracy: 161/2100 (0.076667)
 Epoch 3: 
-Test set: Average loss: 3.0943, Accuracy: 195/2100 (0.092857)
+Test set: Average loss: 3.1001, Accuracy: 196/2100 (0.093333)
 Epoch 4: 
-Test set: Average loss: 3.0689, Accuracy: 216/2100 (0.102857)
+Test set: Average loss: 3.0778, Accuracy: 193/2100 (0.091905)
 Epoch 5: 
-Test set: Average loss: 3.0745, Accuracy: 207/2100 (0.098571)
+Test set: Average loss: 3.0725, Accuracy: 209/2100 (0.099524)
 Epoch 6: 
-Test set: Average loss: 3.0432, Accuracy: 194/2100 (0.092381)
+Test set: Average loss: 3.0603, Accuracy: 202/2100 (0.096190)
 Epoch 7: 
-Test set: Average loss: 3.0592, Accuracy: 234/2100 (0.111429)
+Test set: Average loss: 3.0647, Accuracy: 211/2100 (0.100476)
 Epoch 8: 
-Test set: Average loss: 3.0456, Accuracy: 206/2100 (0.098095)
+Test set: Average loss: 3.0389, Accuracy: 250/2100 (0.119048)
 Epoch 9: 
-Test set: Average loss: 3.0480, Accuracy: 230/2100 (0.109524)
+Test set: Average loss: 3.0380, Accuracy: 221/2100 (0.105238)
 Epoch 10: 
-Test set: Average loss: 3.0303, Accuracy: 234/2100 (0.111429)
+Test set: Average loss: 3.0414, Accuracy: 258/2100 (0.122857)
 Epoch 11: 
-Test set: Average loss: 3.0286, Accuracy: 210/2100 (0.100000)
+Test set: Average loss: 3.0250, Accuracy: 255/2100 (0.121429)
 Epoch 12: 
-Test set: Average loss: 3.0191, Accuracy: 236/2100 (0.112381)
+Test set: Average loss: 3.0115, Accuracy: 237/2100 (0.112857)
 Epoch 13: 
-Test set: Average loss: 3.0275, Accuracy: 236/2100 (0.112381)
+Test set: Average loss: 3.0211, Accuracy: 252/2100 (0.120000)
 Epoch 14: 
-Test set: Average loss: 3.0188, Accuracy: 269/2100 (0.128095)
+Test set: Average loss: 3.0262, Accuracy: 255/2100 (0.121429)
 Epoch 15: 
-Test set: Average loss: 3.0188, Accuracy: 251/2100 (0.119524)
+Test set: Average loss: 3.0242, Accuracy: 252/2100 (0.120000)
 Epoch 16: 
-Test set: Average loss: 3.0063, Accuracy: 252/2100 (0.120000)
+Test set: Average loss: 3.0120, Accuracy: 255/2100 (0.121429)
 Epoch 17: 
-Test set: Average loss: 3.0120, Accuracy: 238/2100 (0.113333)
+Test set: Average loss: 3.0050, Accuracy: 256/2100 (0.121905)
 Epoch 18: 
-Test set: Average loss: 3.0058, Accuracy: 239/2100 (0.113810)
+Test set: Average loss: 2.9992, Accuracy: 263/2100 (0.125238)
 Epoch 19: 
-Test set: Average loss: 3.0008, Accuracy: 253/2100 (0.120476)
+Test set: Average loss: 2.9960, Accuracy: 292/2100 (0.139048)
 Epoch 20: 
-Test set: Average loss: 3.0067, Accuracy: 243/2100 (0.115714)
+Test set: Average loss: 2.9948, Accuracy: 250/2100 (0.119048)
 
-Best Accruacy: 0.11571428924798965 for epoch 20
+Best Accruacy: 0.13904762268066406 for epoch 19

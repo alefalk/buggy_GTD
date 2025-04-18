@@ -97,9 +97,9 @@ def prepare_optim(model, opt):
 
 def train(model, optim, db, opt):
     torch.cuda.empty_cache()
-    if os.path.isdir("results"):
-        shutil.rmtree("results")
-    os.makedirs("results/OneHotLongLatCombined")
+    open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "w")
+    max = 0
+    max_epoch = 0
     for epoch in range(1, opt.epochs + 1):
         # Update \Pi
         if not opt.jointly_training:
@@ -177,8 +177,6 @@ def train(model, optim, db, opt):
         model.eval()
         test_loss = 0
         correct = 0
-        max = 0
-        max_epoch = 0
         test_loader = torch.utils.data.DataLoader(db['eval'], batch_size=opt.batch_size, shuffle=True)
         with torch.no_grad():
             for data, target in test_loader:
@@ -201,31 +199,12 @@ def train(model, optim, db, opt):
                 max = (correct / len(test_loader.dataset))
                 max_epoch = epoch
 
-            if opt.dataset == 'gtd100':
-                with open("results/OneHotLongLatCombined/result_gtd100", "a") as f:
-                    f.write(f'Epoch {epoch}: {text}')                           
-            elif opt.dataset == 'gtd200':
-                with open("results/OneHotLongLatCombined/result_gtd200", "a") as f:
-                    f.write(f'Epoch {epoch}: {text}') 
-            elif opt.dataset == 'gtd300':
-                with open("results/OneHotLongLatCombined/result_gtd300", "a") as f:
-                    f.write(f'Epoch {epoch}: {text}') 
-            elif opt.dataset == 'gtd478':
-                with open("results/OneHotLongLatCombined/result_gtd478", "a") as f:
-                    f.write(f'Epoch {epoch}: {text}') 
 
-    if opt.dataset == 'gtd100':
-        with open("results/OneHotLongLatCombined/result_gtd100", "a") as f:
-            f.write(f'\nBest Accruacy: {max} for epoch {max_epoch}\n')                           
-    elif opt.dataset == 'gtd200':
-        with open("results/OneHotLongLatCombined/result_gtd200", "a") as f:
-            f.write(f'\nBest Accruacy: {max} for epoch {max_epoch}\n') 
-    elif opt.dataset == 'gtd300':
-        with open("results/OneHotLongLatCombined/result_gtd300", "a") as f:
-            f.write(f'\nBest Accruacy: {max} for epoch {max_epoch}\n')
-    elif opt.dataset == 'gtd478':
-        with open("results/OneHotLongLatCombined/result_gtd478", "a") as f:
-            f.write(f'\nBest Accruacy: {max} for epoch {max_epoch}\n')
+            with open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "a") as f:
+                f.write(f'Epoch {epoch}: {text}')                           
+
+    with open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "a") as f:
+        f.write(f'\nBest Accruacy: {max} for epoch {max_epoch}\n')                           
 
 
 def main():
