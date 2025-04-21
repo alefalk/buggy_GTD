@@ -28,7 +28,8 @@ class RF_nog:
 
         train_features = onehot.iloc[:len(train_features)]
         test_features = onehot.iloc[len(train_features):]
-
+        print(train_features.shape)
+        
         self.train = pd.concat([train_features, self.train['gname']], axis=1)
         self.test = pd.concat([test_features, self.test['gname']], axis=1)
 

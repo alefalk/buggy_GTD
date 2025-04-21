@@ -5,6 +5,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import torch
+from sklearn.preprocessing import StandardScaler
+
 
 class UCIAdult(Dataset):
     def __init__(self,root,train=True):
@@ -122,9 +124,12 @@ class UCIgtd(Dataset):
         super(UCIgtd, self).__init__()
 
         df = pd.read_csv(csv_path)
-
         # Separate features and target
         feature_columns = [col for col in df.columns if col != target_col]
+        from sklearn.preprocessing import StandardScaler
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(df[feature_columns])
+        df[feature_columns] = X_scaled
 
         # Encode target labels to integers
         self.labels = sorted(df[target_col].unique())

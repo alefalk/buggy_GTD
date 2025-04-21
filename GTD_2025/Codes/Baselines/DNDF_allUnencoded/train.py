@@ -42,23 +42,23 @@ def prepare_db(opt):
     print("Use %s dataset" % (opt.dataset))
 
     if opt.dataset == 'gtd100':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/train/train100.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/test/test100.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/traindata/train100.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/testdata/test100.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd200':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/train/train200.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/test/test200.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/traindata/train/train200.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/testdata/test/test200.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd300':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/train/train300.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/test/test300.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/traindata/train/train300.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/testdata/test/test300.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd478':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/train/train478.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/noGeographic/test/test478.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/traindata/train/train478.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/testdata/test/test478.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
     else:
         raise NotImplementedError
